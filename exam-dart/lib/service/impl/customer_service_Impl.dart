@@ -27,7 +27,7 @@ class CustomerServiceImpl implements CustomerService {
   @override
   Future<Customer> addCustomer(Customer customer) async{
     try{
-      final response = await http.post(Uri.parse("$baseURL/create"),
+      final response = await http.post(Uri.parse("$baseURL/save"),
         headers: <String, String>{'Content-Type': 'application/json'},
         body: jsonEncode(customer.toJson()),);
       if (response.statusCode == 200) {
